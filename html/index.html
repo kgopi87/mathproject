@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <title>Welcome to Rest Simple Calculator</title>
+   </head>
+   <body style="font-family:'Courier New'">
+      <h2><span style="color: #ffcc00; font-family:'Courier New'"><span style="color: #5e9ca0;">Welcome to REST Calculator</span></span></h2>
+      <p style="font-family:'Courier New'">The Math Application Peripheral Interface is used for generic match caculation using Python.
+         <br>The purpose of the project is to design simple Math Calculator using REST implementation using HTTP protocal
+      </p>
+      <hr />
+      <p><span style="color: #ff0000;">Use the project for testing purpose and Please don't run the load testing here.</span></p>
+      <hr />
+      <h3><span style="color: #33cccc;"><strong>&nbsp;API Documentation</strong></span>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h3>
+      <p>&nbsp;<strong>/auth</strong></p>
+      <p>The /auth purpose is to generate a token and display in UI as rendered HTML.</p>
+      <p><span style="color: #3366ff;"><span style="text-decoration: underline;">Request</span>:</span></p>
+      <ul>
+         <li><span style="color: #3366ff;">Resource/path: /auth</span></li>
+         <li><span style="color: #3366ff;">Method: GET</span></li>
+      </ul>
+      <p><span style="color: #800000;"><span style="text-decoration: underline;">Response</span>:</span></p>
+      <p><span style="color: #800000;">Example: response with generated token</span></p>
+      <p><span style="color: #800000;">bMmw1VDdaNTRxNzlZVmpHbTAyYVAxWThHSjU1MDAzcFd6TGNOS</span></p>
+      <hr/>
+      <p><strong>/maths/v1/add</strong></p>
+      <p>The /maths/v1/add purpose is to add two number and provide the results with addition of two numbers. The API has two request method for doing Addition both the methods provide the exact same values.</p>
+      <p><strong>**GET**</strong></p>
+      <p><span style="color: #3366ff;"><span style="text-decoration: underline;">Request</span>:</span></p>
+      <ul>
+         <li><span style="color: #3366ff;">Resource/path: /maths/v1/add?id1=4&amp;id2=8</span></li>
+         <li><span style="color: #3366ff;">Method: GET</span></li>
+         <li><span style="color: #3366ff;">Query Paramters: id1, id2</span></li>
+          <li><span style="color: #3366ff;">Header: Auth: token</span></li>
+      </ul>
+      <p><span style="color: #800000;"><span style="text-decoration: underline;">Response</span>:</span></p>
+      <p><span style="color: #800000;">{</span></p>
+      <p><span style="color: #800000;">  "added": 12,</span></p>
+      <p><span style="color: #800000;">  "id1": 4,</span></p>
+      <p><span style="color: #800000;">  "id2": 8</span></p>
+      <p><span style="color: #800000;">}</span></p>
+      <p>&nbsp;</p>
+      <p><strong>**POST**</strong></p>
+      <p><span style="color: #3366ff;"><span style="text-decoration: underline;">Request</span>:</span></p>
+      <ul>
+         <li><span style="color: #3366ff;">Resource/path: /maths/v1/add</span></li>
+         <li><span style="color: #3366ff;">Method: POST</span></li>
+         <li><span style="color: #3366ff;">Media Type: application/json</span></li>
+         <li><span style="color: #3366ff;">Body:&nbsp;{ "id1":2, "id2":4}</span></li>
+          <li><span style="color: #3366ff;">Header: Auth: token</span></li>
+      </ul>
+      <p><span style="color: #800000;"><span style="text-decoration: underline;">Response</span>:</span></p>
+      <p><span style="color: #800000;">{</span></p>
+      <p><span style="color: #800000;">"added": 6</span></p>
+      <p><span style="color: #800000;">}</span></p>
+      <hr/>
+      <p><strong>/maths/v1/sub</strong></p>
+      <p>The /maths/v1/sub purpose is to subract two number and provide the results with subraction of two numbers. The API has two request method for doing Subraction both the methods provide the exact same values.</p>
+      <p><strong>**GET**</strong></p>
+      <p><span style="color: #3366ff;"><span style="text-decoration: underline;">Request</span>:</span></p>
+      <ul>
+         <li><span style="color: #3366ff;">Resource/path: /maths/v1/sub?id1=4&amp;id2=8</span></li>
+         <li><span style="color: #3366ff;">Method: GET</span></li>
+         <li><span style="color: #3366ff;">Query Paramters: id1, id2</span></li>
+          <li><span style="color: #3366ff;">Header: Auth: token</span></li>
+      </ul>
+      <p><span style="color: #800000;"><span style="text-decoration: underline;">Response</span>:</span></p>
+      <p><span style="color: #800000;">{</span></p>
+      <p><span style="color: #800000;">"Subtracted": -2,</span></p>
+      <p><span style="color: #800000;">"id1": 2,</span></p>
+      <p><span style="color: #800000;">"id2": 4</span></p>
+      <p><span style="color: #800000;">}</span></p>
+      <p>&nbsp;</p>
+      <p><strong>**POST**</strong></p>
+      <p><span style="color: #3366ff;"><span style="text-decoration: underline;">Request</span>:</span></p>
+      <ul>
+         <li><span style="color: #3366ff;">Resource/path: /maths/v1/sub</span></li>
+         <li><span style="color: #3366ff;">Method: POST</span></li>
+         <li><span style="color: #3366ff;">Media Type: application/json</span></li>
+         <li><span style="color: #3366ff;">Body:&nbsp;{ "id1":2, "id2":4}</span></li>
+          <li><span style="color: #3366ff;">Header: Auth: token</span></li>
+      </ul>
+      <p><span style="color: #800000;"><span style="text-decoration: underline;">Response</span>:</span></p>
+      <p><span style="color: #800000;">{</span></p>
+      <p><span style="color: #800000;">"Subtracted": -1</span></p>
+      <p><span style="color: #800000;">}</span></p>
+      <hr/>
+      <p><strong>/maths/v1/div</strong></p>
+      <p>The /maths/v1/div purpose is to divide two number and provide the results with division of two numbers. The API has two request method for doing divison both the methods provide the exact same values.</p>
+      <p><strong>**GET**</strong></p>
+      <p><span style="color: #3366ff;"><span style="text-decoration: underline;">Request</span>:</span></p>
+      <ul>
+         <li><span style="color: #3366ff;">Resource/path: /maths/v1/div?id1=4&amp;id2=8</span></li>
+         <li><span style="color: #3366ff;">Method: GET</span></li>
+         <li><span style="color: #3366ff;">Query Paramters: id1, id2</span></li>
+          <li><span style="color: #3366ff;">Header: Auth: token</span></li>
+      </ul>
+      <p><span style="color: #800000;"><span style="text-decoration: underline;">Response</span>:</span></p>
+      <p><span style="color: #800000;">{</span></p>
+      <p><span style="color: #800000;">"Divided": 0.5,</span></p>
+      <p><span style="color: #800000;">"id1": 2,</span></p>
+      <p><span style="color: #800000;">"id2": 4</span></p>
+      <p><span style="color: #800000;">}</span></p>
+      <p>&nbsp;</p>
+      <p><strong>**POST**</strong></p>
+      <p><span style="color: #3366ff;"><span style="text-decoration: underline;">Request</span>:</span></p>
+      <ul>
+         <li><span style="color: #3366ff;">Resource/path: /maths/v1/div</span></li>
+         <li><span style="color: #3366ff;">Method: POST</span></li>
+         <li><span style="color: #3366ff;">Media Type: application/json</span></li>
+         <li><span style="color: #3366ff;">Body:&nbsp;{ "id1":2, "id2":4}</span></li>
+          <li><span style="color: #3366ff;">Header: Auth: token</span></li>
+      </ul>
+      <p><span style="color: #800000;"><span style="text-decoration: underline;">Response</span>:</span></p>
+      <p><span style="color: #800000;">{</span></p>
+      <p><span style="color: #800000;">"Divided": 0.5</span></p>
+      <p><span style="color: #800000;">}</span></p>
+      <hr/>
+      <p><strong>/maths/v1/multi</strong></p>
+      <p>The /maths/v1/multi purpose is to multiple two number and provide the results with multiplication of two numbers. The API has two request method for doing multiplication both the methods provide the exact same values.</p>
+      <p><strong>**GET**</strong></p>
+      <p><span style="color: #3366ff;"><span style="text-decoration: underline;">Request</span>:</span></p>
+      <ul>
+         <li><span style="color: #3366ff;">Resource/path: /maths/v1/multi?id1=4&amp;id2=8</span></li>
+         <li><span style="color: #3366ff;">Method: GET</span></li>
+         <li><span style="color: #3366ff;">Query Paramters: id1, id2</span></li>
+          <li><span style="color: #3366ff;">Header: Auth: token</span></li>
+      </ul>
+      <p><span style="color: #800000;"><span style="text-decoration: underline;">Response</span>:</span></p>
+      <p><span style="color: #800000;">{</span></p>
+      <p><span style="color: #800000;">"Multipled": 8,</span></p>
+      <p><span style="color: #800000;">"id1": 2,</span></p>
+      <p><span style="color: #800000;">"id2": 4</span></p>
+      <p><span style="color: #800000;">}</span></p>
+      <p>&nbsp;</p>
+      <p><strong>**POST**</strong></p>
+      <p><span style="color: #3366ff;"><span style="text-decoration: underline;">Request</span>:</span></p>
+      <ul>
+         <li><span style="color: #3366ff;">Resource/path: /maths/v1/multi</span></li>
+         <li><span style="color: #3366ff;">Method: POST</span></li>
+         <li><span style="color: #3366ff;">Media Type: application/json</span></li>
+         <li><span style="color: #3366ff;">Body:&nbsp;{ "id1":2, "id2":4}</span></li>
+          <li><span style="color: #3366ff;">Header: Auth: token</span></li>
+      </ul>
+      <p><span style="color: #800000;"><span style="text-decoration: underline;">Response</span>:</span></p>
+      <p><span style="color: #800000;">{</span></p>
+      <p><span style="color: #800000;">"Multipled": 8</span></p>
+      <p><span style="color: #800000;">}</span></p>
+   </body>
+</html>
